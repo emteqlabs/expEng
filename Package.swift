@@ -3,26 +3,30 @@
 
 import PackageDescription
 
+let version = "1.0.0"
+let moduleName = "expEng"
+let checksum = "4509a23656f8d1a080f45d3996e1ba504281454690b03bc5d8c32f58704045a3"
+
+
 let package = Package(
-    name: "expEng",
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "expEng",
-            targets: ["expEng"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "expEng",
-            dependencies: []),
-        .testTarget(
-            name: "expEngTests",
-            dependencies: ["expEng"]),
-    ]
+	name: moduleName,
+	platforms: [
+		.iOS(.v13) //, .macCatalyst(.v15), .macOS(.v10_15)
+	],
+	products: [
+		.library(
+			name: moduleName,
+			targets: [moduleName]
+		)
+	],
+	targets: [
+		.binaryTarget(
+			name: moduleName,
+//			path: "Sources/expEng.xcframework.zip"		// local
+			//			url: "https://github.com/litoarias/NetworkModuleDistribution/releases/download/\(version)/\(moduleName).xcframework.zip",
+			//			url: "https://github.com/emteqlabs/ocoExpEngSBP/\(moduleName).xcframework.zip",
+			url: "https://github.com/emteqlabs/ocoExpEngSBP/blob/main/expEng.xcframework.zip",
+			checksum: checksum
+		)
+	]
 )
