@@ -23,9 +23,8 @@ let package = Package(
 		.binaryTarget(
 			name: moduleName,
 //			path: "Sources/expEng.xcframework.zip"		// local
-			//			url: "https://github.com/litoarias/NetworkModuleDistribution/releases/download/\(version)/\(moduleName).xcframework.zip",
-			//			url: "https://github.com/emteqlabs/ocoExpEngSBP/\(moduleName).xcframework.zip",
-			url: "https://github.com/emteqlabs/ocoExpEngSBP/blob/main/expEng.xcframework.zip",
+//			url: "https://github.com/emteqlabs/\(moduleName)/releases/download/\(version)/\(moduleName).xcframework.zip",
+			url: "https://github.com/emteqlabs/\(moduleName)/blob/main/Sources/\(moduleName).xcframework.zip",
 			checksum: checksum
 		)
 	]
